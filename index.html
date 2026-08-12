@@ -66,27 +66,27 @@
             display: flex;
             gap: 15px;
         }
-        #google{
-    color: aliceblue;
-            width: 70%;
-            padding: 10px 30px;
-            margin: 5px;
-            
-            border: 2px solid rgb(21, 21, 21);
-            border-radius: 5px;
-
-            text-align: center;
-}
+        #google,
 #facebook {
-    color: aliceblue;
-            width: 70%;
-            padding: 10px 30px;
-            margin: 5px;
-            
-            border: 2px solid rgb(21, 21, 21);
-            border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-            text-align: center;
+    color: black;
+    background-color: white;
+
+    padding: 10px 30px;
+    margin: 5px;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;
+}
+
+#google img,
+#facebook img {
+    width: 18px;
+    height: 18px;
 }
 .login-input {
     width: 260px;
@@ -141,8 +141,17 @@ color: white;">
         <h3>Login to continue to your account</h3>
         <h5>or continue with</h5>
         <div id="container2">
-        <div id="google">Google</div>
-        <div id="facebook">Facebook</div></div><br>
+    <button id="google">
+        <img src="googlelogo.webp" alt="Google">
+        Google
+    </button>
+
+    <button id="facebook">
+        <img src="fblogo.webp" alt="Facebook">
+        Facebook
+    </button>
+</div>
+        <br>
         <div><label for="email">Email</label><br>
 
 <input
@@ -164,7 +173,10 @@ color: white;">
 ></div>
 
 <button class="login-button" type="submit">Login</button>
+<h5>don't have an account?</h5>
+<h5>Sign up</h5>
     </div>
+
 </div>
 </body>
 
