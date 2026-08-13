@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+<style>
+   body {
+    margin: 0;
+}
+    .container{
+           
+    background: linear-gradient(
+        to bottom,
+        #b76cf2 0%,
+        #5a1a91 23%,
+        #2d0d48 38%,
+        #05020b 70%,
+        #000000 100%
+    );
+
+            
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    .user-name,.email,.password,.confirm-password{ color: aliceblue;
+            display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color:rgb(0, 0, 0);
+
+    padding: 2vh 10vh;
+    margin: 5px;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;}
+    .create-account{ width: 260px;
+    padding: 15px;
+    margin: 5px;
+
+    box-sizing: border-box;
+
+    color: aliceblue;
+    background-color: #732CE2;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;}
+</style>
+</head>
+<body>
+    <div class="container"><br><br><br>
+    <h1>Create Your Account</h1>
+    <div>
+<label style="color:white;" for="Your Name">Your Name</label><br>
+
+<input
+    class="user-name"
+    type="user name"
+    id="user name"
+    name="user name"
+    placeholder="Enter your name"
+></div>
+<div>
+<label style="color: white;" for="email">Email Adderss</label><br>
+
+<input
+    class="email"
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+></div>
+<div>
+<label style="color: white;" for="password">Password</label><br>
+
+<input
+    class="password"
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Enter your password"
+></div>
+<div>
+<label style="color: white;" for="confirm-password">Confirm Password</label><br>
+
+<input
+    class="confirm-password"
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Enter your password"
+></div>
+<button class="create-account" type="submit">Create Account</button>
+<h4 style="color: white;">Already have an account? Login
+</h4> 
+
+</div>
+</body>
+</html>
