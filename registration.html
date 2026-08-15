@@ -53,6 +53,10 @@
 
     border: 2px solid rgb(21, 21, 21);
     border-radius: 5px;}
+
+    .errormsg{
+        color: red;
+        }
 </style>
 </head>
 <body>
@@ -69,7 +73,9 @@
     name="username"
     placeholder="Enter username"
     autocomplete="username"
-></div>
+>
+<p id="username-error" class="errormsg"></p>
+</div>
 <div>
 <label style="color: white;" for="email">Email Adderss</label><br>
 
@@ -80,7 +86,9 @@
     name="email"
     placeholder="Enter your email"
     autocomplete="email"
-></div>
+>
+<p id="email-error" class="errormsg"></p>
+</div>
 <div>
 <label style="color: white;" for="password">Password</label><br>
 
@@ -90,7 +98,9 @@
     id="password"
     name="password"
     placeholder="Enter your password"
-></div>
+>
+<p id="password-error" class="errormsg"></p>
+</div>
 <div>
 <label style="color: white;" for="confirm-password">Confirm Password</label><br>
 
@@ -101,6 +111,7 @@
     name="confirmpassword"
     placeholder="Enter your password"
 >
+<p id="confirmpassword-error" class="errormsg"></p>
 </div>
 <button class="create-account" type="submit">Create Account</button>
 <p style="color: white;">Already have an account? <a style="color: white;" href="index.html">Login</a></p>
