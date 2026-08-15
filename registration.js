@@ -1,43 +1,53 @@
 
 const username = document.getElementById("username")
 const usernamePattern = /^[a-zA-Z0-9_.]+$/;
+const usernameError = document.getElementById("username-error");
 
 const email = document.getElementById("email")
+const emailError = document.getElementById("email-error");
 
 const password = document.getElementById("password")
+const passwordError = document.getElementById("password-error");
 
 const confirmpassword = document.getElementById("confirmpassword")
+const confirmpasswordError = document.getElementById("confirmpassword-error");
 
 const registerform = document.getElementById("registerform")
 registerform.addEventListener("submit",function(event){
     event.preventDefault();
 
-    if (!usernamePattern.test(username.value)) {
-    alert("Username can only contain letters, numbers, _ and .");
-}
 
     if(username.value=== "" ){
-    alert("Userame cannot be empty");}
+    // alert("Username cannot be empty");
+    usernameError.textContent = "Username cannot be empty"
+}
     
     else if (!usernamePattern.test(username.value)) {
-    alert("Username can only contain letters, numbers, _ and .");
+    // alert("Username can only contain letters, numbers, _ and .");
+    usernameError.textContent = "Invalid username";
 }
 
     else if(email.value=== "" ){
-    alert("Please Fill Your Email@");}
+    // alert("Please Fill Your Email@");
+    emailError.textContent = "Email cannot be empty"
+}
 
 
     else if(password.value=== "" ){
-    alert("Enter Your Password First");}
+    // alert("Enter Your Password First");
+    passwordError.textContent = "password cannot be empty"
+}
     else if (password.value.length < 8) {
-    alert("Password must be at least 8 characters long");
+    passwordError.textContent = "Password must be 8 character long at least";
 }
 
     else if(confirmpassword.value=== "" ){
-    alert("Please Fill Confirm Password Section");}
+    // alert("Please Fill Confirm Password Section");
+    confirmpasswordError.textContent = "Confirm Password cannot be empty"
+}
 
     else if(password.value !== confirmpassword.value){
-        alert("Password must be same")
+        confirmpasswordError.textContent = "Password must be same";
     }
 
     else{alert("Form Submitted!");}
