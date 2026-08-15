@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    
 <style>
    body {
     margin: 0;
@@ -28,7 +29,7 @@
             flex-direction: column;
             align-items: center;
         }
-    .user-name,.email,.password,.confirm-password{ color: aliceblue;
+    .username,.email,.password,.confirmpassword{ color: aliceblue;
             display: flex;
     align-items: center;
     justify-content: center;
@@ -58,14 +59,16 @@
     <div class="container"><br><br><br>
     <h1>Create Your Account</h1>
     <div>
-<label style="color:white;" for="Your Name">Your Name</label><br>
+    <form id="registerform">
+<label style="color:white;" for="username">Username</label><br>
 
 <input
-    class="user-name"
-    type="user name"
-    id="user name"
-    name="user name"
-    placeholder="Enter your name"
+    class="username"
+    type="username"
+    id="username"
+    name="username"
+    placeholder="Enter username"
+    autocomplete="username"
 ></div>
 <div>
 <label style="color: white;" for="email">Email Adderss</label><br>
@@ -76,6 +79,7 @@
     id="email"
     name="email"
     placeholder="Enter your email"
+    autocomplete="email"
 ></div>
 <div>
 <label style="color: white;" for="password">Password</label><br>
@@ -91,15 +95,17 @@
 <label style="color: white;" for="confirm-password">Confirm Password</label><br>
 
 <input
-    class="confirm-password"
+    class="confirmpassword"
     type="password"
-    id="password"
-    name="password"
+    id="confirmpassword"
+    name="confirmpassword"
     placeholder="Enter your password"
-></div>
+>
+</div>
 <button class="create-account" type="submit">Create Account</button>
 <p style="color: white;">Already have an account? <a style="color: white;" href="index.html">Login</a></p>
-
+</form>
 </div>
 </body>
+<script src="registration.js"></script>
 </html>
