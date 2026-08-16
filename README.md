@@ -13,7 +13,7 @@ The project is being built step-by-step as a full-stack application.
 - [x] Initial project setup
 - [x] Login page UI
 - [x] Lost & Found landing/login interface
-- [ ] User registration
+- [x] User registration
 - [ ] Authentication
 - [ ] Lost item reporting
 - [ ] Found item reporting
