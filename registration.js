@@ -16,6 +16,11 @@ const registerform = document.getElementById("registerform")
 registerform.addEventListener("submit",function(event){
     event.preventDefault();
 
+    usernameError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    confirmpasswordError.textContent = "";
+
 
     if(username.value=== "" ){
     // alert("Username cannot be empty");
