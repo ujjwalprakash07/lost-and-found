@@ -13,6 +13,9 @@ const confirmpassword = document.getElementById("confirmpassword")
 const confirmpasswordError = document.getElementById("confirmpassword-error");
 
 const registerform = document.getElementById("registerform")
+
+
+
 registerform.addEventListener("submit",function(event){
     event.preventDefault();
 
@@ -55,6 +58,28 @@ registerform.addEventListener("submit",function(event){
         confirmpasswordError.textContent = "Password must be same";
     }
 
-    else{alert("Form Submitted!");}
-    
-});
+    else{
+        const data = {
+            username: username.value,
+            email: email.value,
+            password: password.value
+        };
+
+        fetch("http://localhost:3000/register",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response=>{
+            if(response.ok){
+                alert("Form Submitted!");
+            } else {
+                alert("Submission failed");
+            }
+        })
+        .catch(error =>{
+            console.error("Error:", error);
+        });
+}});
