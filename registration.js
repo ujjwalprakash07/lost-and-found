@@ -1,4 +1,4 @@
-
+console.log("registration.js is running");
 const username = document.getElementById("username")
 const usernamePattern = /^[a-zA-Z0-9_.]+$/;
 const usernameError = document.getElementById("username-error");
