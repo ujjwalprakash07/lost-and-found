@@ -1,11 +1,22 @@
 const express = require("express");
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const app = express();
+
 app.use(express.json());
 
-app.post("/register",(req,res) => {
+const cors= require("cors");
+app.use(cors());
+
+const bcrypt = require("bcrypt");
+
+
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+app.post("/register",async(req,res) => {
+    
     const {username, email, password} = req.body;
+    bcrypt.hash(password,10);
+    const hashedpassword = await bcrypt.hash(password,10);
     if(username === ""){
         return res.status(400).json({
         message: "Username cannot be empty"
@@ -39,6 +50,7 @@ app.post("/register",(req,res) => {
 
     console.log(req.body);
     res.send("Registration data received");
+    console.log(hashedpassword)
 })
 
 
