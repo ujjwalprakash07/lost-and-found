@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lost And Found</title>
+    
+
+    <style>
+        .container {
+    display: flex;
+    justify-content: space-between;
+}
+        .box {
+    background: linear-gradient(
+        to bottom,
+        #b76cf2 0%,
+        #5a1a91 23%,
+        #2d0d48 38%,
+        #05020b 70%,
+        #000000 100%
+    );
+
+            width: 50%;
+            height: 100vh;
+            background-color: aquamarine;
+            border-radius: 2%;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        #step101,
+        #step102,
+        #step103 {
+            color: aliceblue;
+            width: 70%;
+            padding: 10px;
+            margin: 5px;
+            
+            border: 2px solid rgb(21, 21, 21);
+            border-radius: 5px;
+
+            text-align: center;
+        }
+        .right{
+            background: linear-gradient(
+        to top,
+        #000000 7%,
+        #090A0E 22%
+
+    );
+            background-color: #090A0E;
+            color: aliceblue;
+            align-items: center;
+            width: 50%;
+            border-radius: 2%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;           
+        }
+        #container2{
+            display: flex;
+            gap: 15px;
+        }
+        #google,
+#facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: black;
+    background-color: white;
+
+    padding: 10px 30px;
+    margin: 5px;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;
+}
+
+#google img,
+#facebook img {
+    width: 18px;
+    height: 18px;
+}
+.login-input {
+    width: 260px;
+    padding: 10px;
+    margin: 5px;
+
+    box-sizing: border-box;
+
+    color: aliceblue;
+    background-color: #090A0E;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 260px;
+    padding: 15px;
+    margin: 5px;
+
+    box-sizing: border-box;
+
+    color: aliceblue;
+    background-color: #732CE2;
+
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;
+}
+    </style>
+</head>
+
+<body style="background-color: #090A0E;
+color: white;">
+
+<div class="container">
+    <div class="box">
+        <br><br><br><br><br><br><br><br><br>
+
+        <h1 style="color: rgb(198, 169, 206);">Lost And Found</h1>
+
+        <h4 style="color: #d8c0ea;">Reuniting lost items with their owners</h4>
+
+        <div id="step101">Report an item</div>
+
+        <div id="step102">We match</div>
+
+        <div id="step103">Reunite and return</div>
+
+    </div>
+    <div class="right"><br><br><br>
+        <h1>Welcome</h1>
+        <h3>Login to continue to your account</h3>
+        <h5>or continue with</h5>
+        <div id="container2">
+    <button id="google">
+        <img src="googlelogo.webp" alt="Google">
+        Google
+    </button>
+
+    <button id="facebook">
+        <img src="fblogo.webp" alt="Facebook">
+        Facebook
+    </button>
+</div>
+        <br>
+        <form id="loginform">
+        <div><label for="email">Email</label><br>
+
+<input
+    class="login-input"
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+></div>
+<div>
+<label for="password">Password</label><br>
+
+<input
+    class="login-input"
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Enter your password"
+></div>
+
+<button class="login-button" type="submit">Login</button></form>
+<h5>don't have an account?</h5>
+<p>Don't have an account? <a style="color: white;" href="registration.html">Sign up</a></p>
+    </div>
+
+</div>
+</body>
+<script src="login.js"></script>
+</html>
