@@ -1,3 +1,13 @@
+const express = require("express");
+const app = express();
+
+
+const cors = require("cors");
+app.use(cors());
+
+app.use(express.json());
+
+
 const { Pool } = require("pg");
 
 require("dotenv").config();
@@ -23,14 +33,6 @@ pool.query("SELECT 1", (error, result) => {
 
 
 
-const express = require("express");
-const app = express();
-
-app.use(express.json());
-
-const cors = require("cors");
-app.use(cors());
-
 const bcrypt = require("bcrypt");
 
 
@@ -40,6 +42,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 app.post("/register", async (req, res) => {
 
     const { username, email, password } = req.body;
+
 
 
     if (username === "") {
@@ -102,6 +105,77 @@ app.post("/register", async (req, res) => {
         }
     );
 })
+
+
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    if (email === "") {
+        return res.status(400).json({
+            message: "Email cannot be empty"
+        });
+    }
+
+    if (!emailPattern.test(email)) {
+        return res.status(400).json({
+            message: "Email pattern is wrong"
+        });
+    }
+
+    if (password === "") {
+        return res.status(400).json({
+            message: "Password cannot be empty"
+        });
+    }
+
+    if (password.length < 8) {
+        return res.status(400).json({
+            message: "Password must be at least 8 characters"
+        });
+    }
+
+    pool.query(
+        `SELECT id, username, password_hash
+         FROM users
+         WHERE email = $1`,
+        [email],
+        async (error, result) => {
+
+            if (error) {
+                console.log(error);
+
+                return res.status(500).json({
+                    message: "Database error"
+                });
+            }
+
+            if (result.rows.length === 0) {
+                return res.status(401).json({
+                    message: "Invalid email or password"
+                });
+            }
+
+            const user = result.rows[0];
+
+            const isMatch = await bcrypt.compare(
+                password,
+                user.password_hash
+            );
+
+            if (!isMatch) {
+                return res.status(401).json({
+                    message: "Invalid email or password"
+                });
+            }
+
+            res.status(200).json({
+                message: "Login successful",
+                username: user.username
+            });
+        }
+    );
+});
+
 
 
 
