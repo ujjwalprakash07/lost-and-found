@@ -24,7 +24,11 @@ loginform.addEventListener("submit", function (event) {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+             if (data.message === "Login successful") {
+        window.location.href = "dashboard.html";
+    } else {
+        alert(data.message);
+    }
         })
 
 });
